@@ -1,4 +1,4 @@
-GoodlyFere Import, a simple data import framework
+GoodlyFere Import Web Interface, a simple web interface to performing data imports with the GoodlyFere Import framework.
 
 Copyright (C) 2013 Benjamin Ramey
 
@@ -18,6 +18,30 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 http://www.gnu.org/licenses/lgpl-2.1-standalone.html
 
 You can contact me at ben.ramey@gmail.com.
+
+EntityFramework
+This library makes use of the EntityFramework library which is licensed
+under the MICROSOFT SOFTWARE SUPPLEMENTAL license.
+http://go.microsoft.com/fwlink/?LinkId=253891&clcid=0x409
+http://go.microsoft.com/fwlink/?LinkId=253898&clcid=0x409
+
+Json.NET
+This library makes use of the Json.NET library which is licensed
+under the MIT license.
+http://james.newtonking.com/projects/json-net.aspx
+http://json.codeplex.com/license
+
+Elmah
+This library makes use of the ELMAH library which is licensed
+under the Apache 2.0 license.
+https://code.google.com/p/elmah/
+http://www.apache.org/licenses/LICENSE-2.0
+
+Autofac
+This library makes use of the Autofac IOC library which is licensed
+under the MIT license.
+https://code.google.com/p/autofac/
+http://opensource.org/licenses/mit-license.php
 
 Common.Logging
 This library makes use of the Common.Logging library which is licensed

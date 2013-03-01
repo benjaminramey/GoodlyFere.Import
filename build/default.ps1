@@ -2,7 +2,7 @@ properties {
   $base_dir  = resolve-path ..\
   $build_base_dir = "$base_dir\build"
   $build_dir = "$build_base_dir\build"
-  $packageinfo_dir = "$base_dir"
+  $packageinfo_dir = "$base_dir\GoodlyFere.Import"
   $debug_build_dir = "$build_dir\bin\debug"
   $release_build_dir = "$build_dir\bin\release"
   $release_dir = "$build_base_dir\Release"
@@ -28,8 +28,8 @@ task Init -depends Clean {
 }
 
 task Compile -depends Init {
-  Exec { msbuild $sln_file /p:"OutDir=$debug_build_dir\;Configuration=Debug;TargetFrameworkVersion=v4.0" } "msbuild (debug) failed."
-  Exec { msbuild $sln_file /p:"OutDir=$release_build_dir\;Configuration=Release;TargetFrameworkVersion=v4.0" } "msbuild (release) failed."
+  Exec { msbuild $sln_file /p:"OutDir=$debug_build_dir\;Configuration=Debug;TargetFrameworkVersion=v4.5" } "msbuild (debug) failed."
+  Exec { msbuild $sln_file /p:"OutDir=$release_build_dir\;Configuration=Release;TargetFrameworkVersion=v4.5" } "msbuild (release) failed."
 }
 
 task Test -depends Compile -precondition { return $run_tests }{
