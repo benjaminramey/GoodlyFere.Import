@@ -28,8 +28,8 @@ task Init -depends Clean {
 }
 
 task Compile -depends Init {
-  Exec { msbuild $sln_file /p:"OutDir=$debug_build_dir\;Configuration=Debug;TargetFrameworkVersion=v4.5" } "msbuild (debug) failed."
-  Exec { msbuild $sln_file /p:"OutDir=$release_build_dir\;Configuration=Release;TargetFrameworkVersion=v4.5" } "msbuild (release) failed."
+  Exec { msbuild $sln_file /p:"OutDir=$debug_build_dir\;Configuration=Debug;TargetFrameworkVersion=v4.0" } "msbuild (debug) failed."
+  Exec { msbuild $sln_file /p:"OutDir=$release_build_dir\;Configuration=Release;TargetFrameworkVersion=v4.0" } "msbuild (release) failed."
 }
 
 task Test -depends Compile -precondition { return $run_tests }{
