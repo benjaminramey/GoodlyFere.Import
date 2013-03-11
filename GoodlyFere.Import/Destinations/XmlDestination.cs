@@ -35,6 +35,7 @@ using System.Linq;
 using System;
 using System.Xml;
 using System.Xml.Xsl;
+using Common.Logging;
 using GoodlyFere.Import.Interfaces;
 
 #endregion
@@ -43,6 +44,12 @@ namespace GoodlyFere.Import.Destinations
 {
     public class XmlDestination : IDestination
     {
+        #region Constants and Fields
+
+        private static readonly ILog Log = LogManager.GetLogger<XmlDestination>();
+
+        #endregion
+
         #region Constructors and Destructors
 
         public XmlDestination(string pathToXslt, string pathToResultXml)
@@ -72,8 +79,11 @@ namespace GoodlyFere.Import.Destinations
 
         public virtual bool Receive(DataTable data)
         {
+            Log.Info("Beginning xml destination push.");
+
             if (string.IsNullOrEmpty(data.TableName))
             {
+                Log.Info("Data table has no name, using generic name 'DataTable'.");
                 data.TableName = "DataTable";
             }
 
@@ -97,6 +107,9 @@ namespace GoodlyFere.Import.Destinations
 
         protected virtual void TransformXml(XmlReader reader)
         {
+            Log.InfoFormat(
+                "Transforming xml using '{0}' XSLT and '{1}' XML destination file.", PathToXslt, PathToResultXml);
+
             XslCompiledTransform transform = new XslCompiledTransform();
             transform.Load(PathToXslt);
 

@@ -40,11 +40,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("GoodlyFere.Import.ImporterTests")]
+[assembly: AssemblyTitle("GoodlyFere.Import.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GoodlyFere.Import.ImporterTests")]
+[assembly: AssemblyProduct("GoodlyFere.Import.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -59,5 +59,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("5328eab7-2cd4-47df-a7d3-a481634bfe59")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyInformationalVersion("1.0.0.8")]
-[assembly: AssemblyFileVersion("1.0.0.4")]
+[assembly: AssemblyInformationalVersion("1.0.0.9")]
+[assembly: AssemblyFileVersion("1.0.0.5")]

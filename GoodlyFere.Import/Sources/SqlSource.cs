@@ -32,6 +32,7 @@
 using System.Data;
 using System.Linq;
 using System;
+using Common.Logging;
 using GoodlyFere.Import.Interfaces;
 
 #endregion
@@ -41,6 +42,12 @@ namespace GoodlyFere.Import.Sources
     public abstract class SqlSource<T> : ISource
         where T : IDbConnection, new()
     {
+        #region Constants and Fields
+
+        private static readonly ILog Log = LogManager.GetLogger(typeof(SqlSource<>));
+
+        #endregion
+
         #region Constructors and Destructors
 
         protected SqlSource(string testConnectionString, string query)
@@ -62,6 +69,8 @@ namespace GoodlyFere.Import.Sources
 
         public virtual DataTable GetData()
         {
+            Log.Info("Beginning SQL data retrieval.");
+
             DataTable table = new DataTable();
             using (var conn = new T())
             {
@@ -69,6 +78,7 @@ namespace GoodlyFere.Import.Sources
                 RetrieveData(conn, table);
             }
 
+            Log.Info("SQL data retrieval is done.");
             return table;
         }
 
@@ -80,9 +90,11 @@ namespace GoodlyFere.Import.Sources
         {
             if (conn.Equals(null))
             {
+                Log.Error("Connection info is null.  Could not open connection.");
                 throw new Exception("Could not create database connection.");
             }
 
+            Log.InfoFormat("Opening connection to {0}", conn.Database);
             conn.ConnectionString = TestConnectionString;
             conn.Open();
         }
@@ -101,6 +113,8 @@ namespace GoodlyFere.Import.Sources
 
                 table.Load(reader, LoadOption.OverwriteChanges);
             }
+
+            Log.InfoFormat("{0} rows retrieved.", table.Rows.Count);
         }
 
         #endregion

@@ -32,6 +32,7 @@
 using System;
 using System.Data;
 using System.Linq;
+using Common.Logging;
 using GoodlyFere.Import.Interfaces;
 
 #endregion
@@ -40,10 +41,17 @@ namespace GoodlyFere.Import.Converters
 {
     public class DoNothingConverter : IConverter
     {
+        #region Constants and Fields
+
+        private static readonly ILog Log = LogManager.GetLogger<DoNothingConverter>();
+
+        #endregion
+
         #region Public Methods
 
         public DataTable ConvertData(DataTable data)
         {
+            Log.Info("Using do-nothing converter.");
             return data;
         }
 
