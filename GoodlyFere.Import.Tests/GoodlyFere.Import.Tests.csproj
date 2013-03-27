@@ -59,6 +59,7 @@
     <Compile Include="DestinationTests\XmlDestinationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ImporterTests.cs" />
+    <Compile Include="SourceTests\CsvSourceTests.cs" />
     <Compile Include="SourceTests\SqlSourceTests.cs" />
     <Compile Include="TestDataHelper.cs" />
   </ItemGroup>
