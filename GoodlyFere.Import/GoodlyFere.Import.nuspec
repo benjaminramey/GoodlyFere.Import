@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A simple framework to build data import projects upon.</description>
     <releaseNotes>
-        Added CsvSource.
+        Added SqlDestination.
     </releaseNotes>
     <tags>data import framework</tags>
     <dependencies>
