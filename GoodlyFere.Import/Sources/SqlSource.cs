@@ -52,7 +52,7 @@ namespace GoodlyFere.Import.Sources
 
         protected SqlSource(string testConnectionString, string query)
         {
-            TestConnectionString = testConnectionString;
+            ConnectionString = testConnectionString;
             Query = query;
         }
 
@@ -61,7 +61,7 @@ namespace GoodlyFere.Import.Sources
         #region Properties
 
         protected string Query { get; set; }
-        protected string TestConnectionString { get; set; }
+        protected string ConnectionString { get; set; }
 
         #endregion
 
@@ -95,7 +95,7 @@ namespace GoodlyFere.Import.Sources
             }
 
             Log.InfoFormat("Opening connection to {0}", conn.Database);
-            conn.ConnectionString = TestConnectionString;
+            conn.ConnectionString = ConnectionString;
             conn.Open();
         }
 

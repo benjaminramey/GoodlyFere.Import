@@ -78,10 +78,9 @@ namespace GoodlyFere.Import.Tests
 
                 DataSet ds = new DataSet();
                 SQLiteDataAdapter da = new SQLiteDataAdapter("select * from Widgets", conn);
-                da.TableMappings.Add("Widgets", "Widget");
-
+                
                 da.Fill(ds, "Widgets");
-                return ds.Tables["Widget"];
+                return ds.Tables["Widgets"];
             }
         }
 

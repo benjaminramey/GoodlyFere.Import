@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Destinations\MsSqlDestination.cs" />
+    <Compile Include="Destinations\SqlDestination.cs" />
     <Compile Include="Destinations\XmlDestination.cs" />
     <Compile Include="Converters\DoNothingConverter.cs" />
     <Compile Include="Interfaces\IConverter.cs" />
