@@ -68,8 +68,13 @@ namespace GoodlyFere.Import.Destinations
             using (DataAdapter adapter = CreateAdapter(conn, data))
             {
                 adapter.TableMappings.Add("Table", data.TableName);
-                DataSet set = new DataSet();
-                set.Tables.Add(data);
+
+                if (data.DataSet == null)
+                {
+                    DataSet set = new DataSet();
+                    set.Tables.Add(data);
+                }
+
                 adapter.Update(data.DataSet);
             }
         }
